@@ -16,9 +16,6 @@ A simple GUI Widget library for TFT screens.
 #define _GUILIBRARY_H_
 #include <stdint.h>
 #include "LinkedList.h"
-#include <SPFD5408_Adafruit_GFX.h>    // Core graphics library
-#include <SPFD5408_Adafruit_TFTLCD.h>
-#include <TouchScreen.h>
 
 // sometimes we want to disable this
 //#define USING_SD 1
@@ -33,7 +30,7 @@ A simple GUI Widget library for TFT screens.
 #define TS_MAXX 920
 #define TS_MAXY 940
 
-#define MINPRESSURE 15
+#define MINPRESSURE 10 // update with value i know works
 #define MAXPRESSURE 1000
 
 // debounce delay for button presses on crappy touchsreens
@@ -51,13 +48,23 @@ A simple GUI Widget library for TFT screens.
 #define TRANSPARENT 2
 #define PRESSED     3
 
-#define ILI9341_GREY 0x7BEF
+// colors from tftpaint demo
+#define	SPFD5408_BLACK   0x0000
+#define	SPFD5408_BLUE    0x001F
+#define	SPFD5408_RED     0xF800
+#define	SPFD5408_GREEN   0x07E0
+#define SPFD5408_CYAN    0x07FF
+#define SPFD5408_MAGENTA 0xF81F
+#define SPFD5408_YELLOW  0xFFE0
+#define SPFD5408_WHITE   0xFFFF
+
+#define SPFD5408_GREY    0x7BEF
 
 
 // default colours
-#define DEFAULT_COLOUR_BG ILI9341_GREY
-#define DEFAULT_COLOUR_FG ILI9341_BLACK
-#define DEFAULT_COLOUR_BORDER ILI9341_WHITE
+#define DEFAULT_COLOUR_BG SPFD5408_GREY
+#define DEFAULT_COLOUR_FG SPFD5408_BLACK
+#define DEFAULT_COLOUR_BORDER SPFD5408_WHITE
 
 
 class GuiElement {
@@ -202,7 +209,7 @@ private:
 
 //////////////////
 
-extern Adafruit_ILI9341* _tft;
+extern Adafruit_TFTLCD* _tft;
 extern uint8_t _TFT_CS;
 
 #if USING_SD
@@ -212,7 +219,7 @@ extern SdFat* _sd;
 class Gui : public GuiElement {
 public:
     Gui(void);
-    Gui(Adafruit_ILI9341* thetft, TouchScreen* thets, int16_t x, int16_t y, int16_t width, int16_t height) 
+    Gui(Adafruit_TFTLCD* thetft, TouchScreen* thets, int16_t x, int16_t y, int16_t width, int16_t height) 
         : GuiElement(x, y, width, height) { _tft = thetft; ts = thets; borderWidth = 0; margin = 0; backgroundColour = DEFAULT_COLOUR_BG; transparent(false); }; // usually the size of you tft. i.e. (0,0,320,240)
     void setRotation(int16_t degrees);
     
@@ -263,7 +270,7 @@ public:
 class GuiMultiLineTextBox : public GuiElementList {
 public:
     GuiMultiLineTextBox(void);
-    GuiMultiLineTextBox(int16_t x, int16_t y, int16_t width, int16_t height) : GuiElementList(x, y, width, height) { backgroundColour = ILI9341_WHITE; transparent(false); };
+    GuiMultiLineTextBox(int16_t x, int16_t y, int16_t width, int16_t height) : GuiElementList(x, y, width, height) { backgroundColour = SPFD5408_WHITE; transparent(false); };
     
     void addChild(GuiElement *child);
     void addLine(char const* text);
