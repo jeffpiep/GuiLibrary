@@ -24,7 +24,7 @@ A simple GUI Widget library for TFT screens.
 #include <string.h>
 #include "GuiLibrary.h"
 
-Adafruit_ILI9341* _tft;
+Adafruit_TFTLCD* _tft;
 
 #if USING_SD
 SdFat* _sd;

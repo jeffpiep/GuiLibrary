@@ -16,6 +16,9 @@ A simple GUI Widget library for TFT screens.
 #define _GUILIBRARY_H_
 #include <stdint.h>
 #include "LinkedList.h"
+#include <SPFD5408_Adafruit_GFX.h>
+#include <SPFD5408_Adafruit_TFTLCD.h>
+#include <SPFD5408_TouchScreen.h>
 
 // sometimes we want to disable this
 //#define USING_SD 1
