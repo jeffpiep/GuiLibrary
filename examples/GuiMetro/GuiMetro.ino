@@ -10,31 +10,35 @@
  ****************************************************/
 
 /** NOT FOR USE WITH THE TOUCH SHIELD, ONLY FOR THE BREAKOUT! **/
-
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <SPI.h>
-#include <Adafruit_ILI9341.h>
-#include "TouchScreen.h"
+//
+// SPFD5408 libraries for Adafruit
+#include <SPFD5408_Adafruit_GFX.h>
+#include <SPFD5408_Adafruit_TFTLCD.h>
+#include <SPFD5408_TouchScreen.h>
 #include "GuiLibrary.h"
 
 // These are the four touchscreen analog pins
-#define YP A0  // must be an analog pin, use "An" notation!
-#define XM A1  // must be an analog pin, use "An" notation!
-#define YM 6   // can be a digital pin
-#define XP 5   // can be a digital pin
+#define YP A3  // must be an analog pin, use "An" notation!
+#define XM A2  // must be an analog pin, use "An" notation!
+#define YM 9   // can be a digital pin
+#define XP 8   // can be a digital pin
 
 
 // This is calibration data for the raw touch data to the screen coordinates
-#define TS_MINX 150
+#define TS_MINX 200
 #define TS_MINY 120
-#define TS_MAXX 920
-#define TS_MAXY 940
+#define TS_MAXX 905
+#define TS_MAXY 830
 
 
 // The display uses hardware SPI, plus #9 & #10
-#define TFT_CS 4
-#define TFT_DC 5
-Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC);
+
+#define LCD_CS A3
+#define LCD_CD A2
+#define LCD_WR A1
+#define LCD_RD A0
+#define LCD_RESET A4
+Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
 
 // For better pressure precision, we need to know the resistance
 // between X+ and X- Use any multimeter to read it
@@ -188,4 +192,3 @@ void loop()
 
   return;
 }
-
