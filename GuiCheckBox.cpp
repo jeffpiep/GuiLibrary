@@ -73,13 +73,13 @@ void GuiCheckBox::draw(void) {
     
     GuiElement::drawBase();    
     
-    _tft->drawRect(newx, midy - midFontHeight, boxSize, boxSize, ILI9341_WHITE);
+    _tft->drawRect(newx, midy - midFontHeight, boxSize, boxSize, SPFD5408_WHITE);
     
     // erase or fill the bg
     if (pressed()) {
         // tick it
-        _tft->drawLine(newx, midy - midFontHeight, newx + boxSize - 1, midy + (boxSize /2) - 1, ILI9341_WHITE);
-        _tft->drawLine(newx + boxSize - 1, midy - midFontHeight, newx, midy + (boxSize /2) - 1, ILI9341_WHITE);
+        _tft->drawLine(newx, midy - midFontHeight, newx + boxSize - 1, midy + (boxSize /2) - 1, SPFD5408_WHITE);
+        _tft->drawLine(newx + boxSize - 1, midy - midFontHeight, newx, midy + (boxSize /2) - 1, SPFD5408_WHITE);
     }
     extraXOffset = 5 + fontSize() * 7;
     

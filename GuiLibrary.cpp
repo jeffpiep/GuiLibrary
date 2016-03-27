@@ -126,7 +126,7 @@ void GuiElement::drawBase(void) {
     bool isEnabled = (settingsFlags >> ENABLED) & 1;
     
     if (!transparent() || !isEnabled) {
-        _tft->fillRect(absoluteX(), absoluteY(), width, height, (isEnabled ? backgroundColour : ILI9341_LIGHTGREY));
+        _tft->fillRect(absoluteX(), absoluteY(), width, height, (isEnabled ? backgroundColour : SPFD5408_LIGHTGREY));
     }
     else if (transparent()) {
         // it won't get drawn if there is no background on it, so we swipe it from the parent
@@ -136,14 +136,14 @@ void GuiElement::drawBase(void) {
     
     // draw the guide lines
 //     uint16_t y = GuiUtils::getElementCentreY(this);
-//     _tft->drawLine(absoluteX(), y, absoluteX() + width - margin, y, ILI9341_RED);
+//     _tft->drawLine(absoluteX(), y, absoluteX() + width - margin, y, SPFD5408_RED);
     
     // draw the outline border
     if (borderWidth > 0) {
         int16_t colour = borderColour;
         
         if (!enabled()) {
-            colour = ILI9341_DARKGREY;
+            colour = SPFD5408_DARKGREY;
         }        
         _tft->drawRect(absoluteX(), absoluteY(), width, height, colour);
     }

@@ -37,14 +37,14 @@ public:
         
         GuiElement::drawBase();    
         
-        _tft->drawCircle(newx + (boxSize / 2), midy, boxSize/2, ILI9341_WHITE);
+        _tft->drawCircle(newx + (boxSize / 2), midy, boxSize/2, SPFD5408_WHITE);
         if (pressed())
             Serial.println("pressed");
         
         // erase or fill the bg
         if (pressed()) {
             // tick it
-            _tft->fillCircle(newx + (boxSize / 2), midy, (boxSize/2) - 3, ILI9341_WHITE);
+            _tft->fillCircle(newx + (boxSize / 2), midy, (boxSize/2) - 3, SPFD5408_WHITE);
         }
         extraXOffset = 3 + fontSize() * 7;
         
