@@ -15,7 +15,7 @@
 #include <SPFD5408_Adafruit_GFX.h>
 #include <SPFD5408_Adafruit_TFTLCD.h>
 #include <SPFD5408_TouchScreen.h>
-#include "GuiLibrary.h"
+#include <GuiLibrary.h>
 
 // These are the four touchscreen analog pins
 #define YP A3  // must be an analog pin, use "An" notation!
@@ -168,11 +168,12 @@ void buildPanelSettings() {
 void setup(void) {
  // while (!Serial);     // used for leonardo debugging
 
-  Serial.begin(115200);
-  delay(1000);
+  Serial.begin(9600);
+  //delay(1000);
   Serial.println(F("Gui Widgets test!"));
+  tft.reset();
   
-  tft.begin();
+  tft.begin(0x9341);
   // in multiples of 90 only (duh)
   gui.setRotation(270);
     
