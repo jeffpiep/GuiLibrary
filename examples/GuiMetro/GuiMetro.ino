@@ -17,6 +17,29 @@
 #include <SPFD5408_TouchScreen.h>
 #include <GuiLibrary.h>
 
+//DEFINE SOME COLORS
+#define SPFD5408_DARKGREY    0x7BEF
+#define SPFD5408_LIGHTGREY   0xC618
+#define SPFD5408_BLACK       0x0000      
+#define SPFD5408_NAVY        0x000F      
+#define SPFD5408_DARKGREEN   0x03E0      
+#define SPFD5408_DARKCYAN    0x03EF      
+#define SPFD5408_MAROON      0x7800      
+#define SPFD5408_PURPLE      0x780F      
+#define SPFD5408_OLIVE       0x7BE0      
+#define SPFD5408_LIGHTGREY   0xC618      
+#define SPFD5408_DARKGREY    0x7BEF      
+#define SPFD5408_BLUE        0x001F      
+#define SPFD5408_GREEN       0x07E0      
+#define SPFD5408_CYAN        0x07FF      
+#define SPFD5408_RED         0xF800     
+#define SPFD5408_MAGENTA     0xF81F      
+#define SPFD5408_YELLOW      0xFFE0      
+#define SPFD5408_WHITE       0xFFFF      
+#define SPFD5408_ORANGE      0xFD20      
+#define SPFD5408_GREENYELLOW 0xAFE5     
+#define SPFD5408_PINK        0xF81F
+
 // These are the four touchscreen analog pins
 #define YP A3  // must be an analog pin, use "An" notation!
 #define XM A2  // must be an analog pin, use "An" notation!
@@ -109,7 +132,7 @@ void buildPanelMenu() {
 
   
   GuiButton *button3 = new GuiButton(TILE_COLUMN1, TILE_HEIGHT + 4, (TILE_WIDTH / 2) - 2, (TILE_HEIGHT / 2) - 2, "Exit");
-  button3->backgroundColour = GuiUtils::getColour(0, 193, 63); // green
+  button3->backgroundColour = SPFD5408_MAGENTA; // GuiUtils::getColour(0, 193, 63); // green
 //  button3->connectCallback(callbackFunction);
   button3->borderWidth = 0;
 
