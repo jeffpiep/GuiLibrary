@@ -1,3 +1,4 @@
+Adaption to use SPDF5408 TFT libraries.
 ====================================================================================
 Copyright (c) 2015 Barry Carter <barry.carter@gmail.com>
 
