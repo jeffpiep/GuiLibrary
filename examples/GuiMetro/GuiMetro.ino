@@ -175,7 +175,7 @@ void setup(void) {
   
   tft.begin(0x9341);
   // in multiples of 90 only (duh)
-  gui.setRotation(270);
+  gui.setRotation(90);
     
   buildPanelMenu();
   buildPanelSettings();
