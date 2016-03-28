@@ -15,7 +15,7 @@ A simple GUI Widget library for TFT screens.
 #include "GuiLibrary.h"
 
 //an external global reference to the tft.
-extern Adafruit_ILI9341* _tft;
+extern Adafruit_TFTLCD* _tft;
   
 // process the callback. This invokes the callback by calling the handle, 
 // and using the processEventPointer to send back the scope

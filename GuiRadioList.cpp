@@ -15,7 +15,7 @@ A simple GUI Widget library for TFT screens.
 #include "GuiLibrary.h"
 
 //an external global reference to the tft.
-extern Adafruit_ILI9341* _tft;
+extern Adafruit_TFTLCD* _tft;
 
 class GuiRadioButton : public GuiCheckBox {
 public:

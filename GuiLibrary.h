@@ -62,7 +62,8 @@ A simple GUI Widget library for TFT screens.
 #define SPFD5408_WHITE   0xFFFF
 
 #define SPFD5408_GREY    0x7BEF
-
+#define SPFD5408_DARKGREY    0x7BEF
+#define SPFD5408_LIGHTGREY   0xC618
 
 // default colours
 #define DEFAULT_COLOUR_BG SPFD5408_GREY
