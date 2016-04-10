@@ -107,7 +107,7 @@ void Gui::update(void) {
         p.x = map(p.x, TS_MINX, TS_MAXX, 0, _tft->width());
         p.y = map(p.y, TS_MINY, TS_MAXY, 0, _tft->height());
     }
-    else if (rotation == 90) {
+    else if (rotation == 270) {
         
         p.x = map(p.y, TS_MINY, TS_MAXY, 0, _tft->width());
         p.y = map(p.x, TS_MINX, TS_MAXX, _tft->height(), 0);
@@ -117,7 +117,7 @@ void Gui::update(void) {
         p.x = map(p.x, TS_MINX, TS_MAXX, _tft->width(), 0);
         p.y = map(p.y, TS_MINY, TS_MAXY, _tft->height(), 0);
     }
-    else if (rotation == 270) {
+    else if (rotation == 90) {
         int16_t oldx = p.x;
         p.x = map(p.y, TS_MINY, TS_MAXY, _tft->width(), 0);
         p.y = map(oldx, TS_MINX, TS_MAXX, 0, _tft->height());
